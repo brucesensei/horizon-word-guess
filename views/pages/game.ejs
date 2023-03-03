@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+  <h2><%= displayCategory %></h2>
+  <h2>Remaining Guesses: <span id="remainingGuesses">6</span></h2>
+  <div id="letter-box"></div>
+
+  <p id="displayWord"><%= displayWord %></p>
+
+  <p id="showWord" hidden>The word is <span id="word"><%= word %></span></p>
+    
+  <p id="winner" hidden>You Win!</p>
+
+  <script src="js/clientSide.js"></script>
+</body>
+</html>
