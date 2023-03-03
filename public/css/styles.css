@@ -1,8 +1,8 @@
 :root {
-    --dark: #7900FF;
-    --mid-dark: #548CFF;
-    --mid-light: #93FFD8;
-    --light: #CFFFDC;
+    --dark: #0D4C92;
+    --mid-dark: #59C1BD;
+    --mid-light: #A0E4CB;
+    --light: #CFF5E7;
 }
 
 body {
@@ -10,7 +10,7 @@ body {
     margin: auto;
     background-color: var(--dark);
     color: var(--light);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Comfortaa', cursive;
 }
 
 select {
@@ -83,10 +83,13 @@ a {
     font-size: 1.2rem;
     text-decoration: none;
     color: var(--light);
-    margin-left: 20px;
 }
 
 p {
     margin: 5px;
 }
 
+#nav {
+    margin-top: 10px;
+    margin-left: 20px;
+}
