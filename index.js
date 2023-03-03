@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 const categories = wordBank.word_bank;
+
 let word = '';
 var displayWord = '';
 let category = '';

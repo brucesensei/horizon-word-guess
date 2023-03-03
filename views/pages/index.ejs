@@ -2,7 +2,7 @@
 
   <form action="/" method="post">
     <label for="category">Choose a category</label><br>
-    <select id="category" name="categorylist" size="2" autofocus>
+    <select id="category" name="categorylist" size="10" autofocus>
       <option value="<%=choices[0] %>" selected><%=choices[0] %></option>
       <% for (let i = 1; i < choices.length; i++) { %>
         <option value="<%=choices[i] %>"><%=choices[i] %></option>
