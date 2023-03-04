@@ -57,3 +57,14 @@ function handleClick() {
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
   }
 }
+
+// passes randomly generated emoji to the win and lose hidden messages.
+const winArr = ['&#128512;', '&#128513;', '&#128516;', '&#128526;']
+const winEmoji = winArr[Math.floor(Math.random()*winArr.length)];
+document.getElementById("win-emoji1").innerHTML = winEmoji
+document.getElementById("win-emoji2").innerHTML = winEmoji
+
+const loseArr = ['&#128566;', '&#128580;', '&#128558;', '&#128557;']
+const loseEmoji = loseArr[Math.floor(Math.random()*loseArr.length)];
+document.getElementById("lose-emoji1").innerHTML = loseEmoji
+document.getElementById("lose-emoji2").innerHTML = loseEmoji
