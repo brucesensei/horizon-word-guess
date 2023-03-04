@@ -1,3 +1,6 @@
+// javascript object contianing categories as keys and category items
+// as an array of strings exported to index.js
+
 exports.word_bank = {
     Colors: ['black', 'blue', 'brown', 'green', 'orange', 'pink', 'purple', 'red', 'white', 'yellow'],
     Shapes: ['circle', 'cross', 'diamond', 'heart', 'rectangle', 'square', 'star', 'triangle'],

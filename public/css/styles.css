@@ -69,12 +69,7 @@ p {
     border-radius: 15px;
 }
 
-.letter-box:hover {
-    background-color: var(--mid-light);
-    color: var(--mid-dark);
-}
-
-.selected {
+.letter-box:hover, .selected {
     background-color: var(--mid-light);
     color: var(--mid-dark);
 }
