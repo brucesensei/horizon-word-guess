@@ -55,6 +55,6 @@ app.get('/game', function (req, res) {
 // There is no need for `app.post('/game', ...` because nothing is being sent from
 // the /game route.
  
-app.listen(3000 || `0.0.0.0:$PORT`, function() {
-  console.log('server running on port 3000 or railway port')
+app.listen(process.env.PORT || 3000, function() {
+  console.log('server running...')
 });
