@@ -1,11 +1,15 @@
 //module imports
 const express = require('express');
 const bodyParser = require('body-parser');
-const helper = require('./public/js/serverSide.js')
-const wordBank = require('./public/assets/wordBank.js')
+const helper = require('./public/js/serverSide.js');
+const wordBank = require('./public/assets/wordBank.js');
+const compression = require('compression'); //!!!--------------------------
+const helmet = require('helmet'); //!!!------------------------------------
 
 // module initialization
 const app = express();
+app.use(compression()); //!!!----------------------------------------------
+app.use(helmet()); //!!!---------------------------------------------------
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
@@ -50,7 +54,7 @@ app.get('/game', function (req, res) {
 
 // There is no need for `app.post('/game', ...` because nothing is being sent from
 // the /game route.
-
-app.listen(3000, function() {
-  console.log('server running on port 3000')
+ 
+app.listen(`0.0.0.0:$PORT`, function() {
+  console.log('server hopefully running...')
 });

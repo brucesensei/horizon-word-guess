@@ -1,6 +1,9 @@
 {
   "name": "word-guess",
   "version": "1.0.0",
+  "engines": {
+    "node": ">=v18.12.1"
+  },
   "description": "classic hangman",
   "main": "index.js",
   "scripts": {
@@ -10,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
     "ejs": "^3.1.8",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "helmet": "^6.0.1"
   }
 }
