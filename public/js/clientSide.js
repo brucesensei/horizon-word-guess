@@ -11,7 +11,6 @@ for (let i = 0; i < alpha.length; i++) {
   document.getElementById("letter-box").appendChild(box);
 }
 
-
 //------------------------conditional logic for click events on letters-----------------//
 
 function handleClick() {
@@ -26,6 +25,8 @@ function handleClick() {
 
   // handles the case where the letter is in the word and inserts it in the display word.
   if (word.includes(letter)) {
+    let sound = new Audio("assets/correct.wav");
+    sound.play();
     let displayArray = displayWord.split(" ")
     for (let i = 0; i < word.length; i++) {
       if (word[i] == letter) {
@@ -41,6 +42,8 @@ function handleClick() {
         allLetters[i].removeEventListener("click", handleClick);
       }
       document.getElementById("winner").hidden = false;
+      let sound = new Audio("assets/win.wav");
+    sound.play();
     }
   }
   // handles the case where the remaining guess is incorrect. It moves the counter to 0,
@@ -52,9 +55,13 @@ function handleClick() {
     }
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
     document.getElementById("showWord").hidden = false;
+    let sound = new Audio("assets/lose.wav");
+    sound.play();
   } else {
   //handles the case where the guess is incorrect but gusses remain. Game play continues.
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
+    let sound = new Audio("assets/wrong.wav");
+    sound.play();
   }
 }
 
