@@ -66,6 +66,9 @@ function handleClick() {
     wrong.play();
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
   }
+  if (remainingguesses < 4) {
+    document.getElementById("guess-text").classList.add("warning");
+  }
 }
 
 // passes randomly generated emoji to the win and lose hidden messages.
