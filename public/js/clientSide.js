@@ -22,11 +22,15 @@ function handleClick() {
   const letter = this.innerHTML;
   this.classList.add('selected');
   this.removeEventListener("click", handleClick);
-
+  // assign sounds
+  let correct = new Audio("assets/correct.wav");
+  let win = new Audio("assets/win.wav");
+  let lose = new Audio("assets/lose.wav");
+  let wrong = new Audio("assets/wrong.wav");
+  
   // handles the case where the letter is in the word and inserts it in the display word.
   if (word.includes(letter)) {
-    let sound = new Audio("assets/correct.wav");
-    sound.play();
+    correct.play();
     let displayArray = displayWord.split(" ")
     for (let i = 0; i < word.length; i++) {
       if (word[i] == letter) {
@@ -37,31 +41,30 @@ function handleClick() {
     // handelClick evnets if true. Game play continues if false.
     document.getElementById("displayWord").innerHTML = displayArray.join(" ");
     if (displayArray.includes('_') == false && remainingguesses != 0) {
+      setTimeout(function(){
+        win.play();
+      }, 500);
       const allLetters = document.querySelectorAll(".letter-box");
       for (let i = 0; i < allLetters.length; i++) {
         allLetters[i].removeEventListener("click", handleClick);
       }
       document.getElementById("winner").hidden = false;
-      let sound = new Audio("assets/win.wav");
-    sound.play();
     }
   }
   // handles the case where the remaining guess is incorrect. It moves the counter to 0,
   // diables all handleClick events  and displays the failure message.
   else if (displayWord.includes('_') == true && remainingguesses == 1) {
+    lose.play();
     const allLetters = document.querySelectorAll(".letter-box");
     for (let i = 0; i < allLetters.length; i++) {
       allLetters[i].removeEventListener("click", handleClick);
     }
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
     document.getElementById("showWord").hidden = false;
-    let sound = new Audio("assets/lose.wav");
-    sound.play();
   } else {
   //handles the case where the guess is incorrect but gusses remain. Game play continues.
+    wrong.play();
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
-    let sound = new Audio("assets/wrong.wav");
-    sound.play();
   }
 }
 
