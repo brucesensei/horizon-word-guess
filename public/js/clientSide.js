@@ -41,6 +41,7 @@ function handleClick() {
     // handelClick evnets if true. Game play continues if false.
     document.getElementById("displayWord").innerHTML = displayArray.join(" ");
     if (displayArray.includes('_') == false && remainingguesses != 0) {
+      document.getElementById("displayWord").innerHTML = displayArray.join("");
       setTimeout(function(){
         win.play();
       }, 500);
