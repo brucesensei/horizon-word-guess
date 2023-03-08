@@ -53,6 +53,6 @@ app.get('/game', function (req, res) {
 });
 
  
-app.listen(process.env.PORT || 2000, function() {
-  console.log('server running on port 2000')
+app.listen(process.env.PORT || 3000, function() {
+  console.log('server running on port 3000')
 });
