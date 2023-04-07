@@ -46,5 +46,6 @@ exports.word_bank = {
     'Condition　様子': ['good', 'great', 'nice', 'fantastic', 'wonderful', 'beautiful', 'cool', 'cute', 'favorite', 'interesting', 'exciting', 'famous', 'popular', 'international', 'fun'],
     'Adjectives　状態': ['big', 'small', 'long', 'short', 'new', 'old', 'easy', 'difficult', 'same', 'different', 'slow', 'fast'],
     'Jobs　職業': ['artist', 'musician', 'singer', 'comedian', 'doctor', 'nurse', 'dentist', 'vet', 'zookeeper', 'cook', 'baker', 'florist', 'farmer', 'police-officer', 'fire-fighter', 'pilot', 'flight-attendant', 'bus-driver', 'astronaut', 'teacher', 'scientist', 'programmer', 'baseball-player', 'soccer-player', 'figure-skater'],
-    'Clubs　部活動': ['baseball-team', 'softball-team', 'basketball-team', 'volleyball-team', 'soccer-team', 'tennis-team', 'table-tennis-team', 'badminton-team', 'track-and-field-team', 'gymnastics-team', 'art-club', 'drama-club', 'broadcasting-club', 'cooking-club', 'newspaper-club', 'photography-club', 'brass-band', 'chorus']
+    'Clubs　部活動': ['baseball-team', 'softball-team', 'basketball-team', 'volleyball-team', 'soccer-team', 'tennis-team', 'table-tennis-team', 'badminton-team', 'track-and-field-team', 'gymnastics-team', 'art-club', 'drama-club', 'broadcasting-club', 'cooking-club', 'newspaper-club', 'photography-club', 'brass-band', 'chorus'],
+    'Random': ['this', 'is', 'dummy', 'data']
   }

@@ -1,13 +1,26 @@
 const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-//--------------------------- Create the alphabet letters--------------------------------//
+function makeDisplayword(modifyWord) {
+      var displayWord = ''
+      for (let i = 0; i < modifyWord.length; i++) {
+          if (word[i] == '-') {
+              displayWord += '-';
+          } else {
+              displayWord += '_'; 
+          }
+      }
+      displayWord = displayWord.split("").join(" ");
+      return displayWord;
+  }
+
+  
+  //--------------------------- Create the alphabet letters--------------------------------//
 
 for (let i = 0; i < alpha.length; i++) {
   const box = document.createElement("div");
   box.classList.add("letter-box");
   box.setAttribute('id', alpha[i]);
   box.innerText = alpha[i];
-  box.addEventListener('click', handleClick);
   document.getElementById("letter-box").appendChild(box);
 }
 
@@ -63,7 +76,7 @@ function handleClick() {
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
     document.getElementById("showWord").hidden = false;
   } else {
-  //handles the case where the guess is incorrect but gusses remain. Game play continues.
+    //handles the case where the guess is incorrect but gusses remain. Game play continues.
     wrong.play();
     document.getElementById("remainingGuesses").innerHTML = remainingguesses - 1
   }
@@ -71,6 +84,25 @@ function handleClick() {
     document.getElementById("guess-text").classList.add("warning");
   }
 }
+
+function gameSetup() {
+  let categoryItems =  document.getElementById('category-items').innerText
+  const splitCategoryItems = categoryItems.split(',')
+  const word =  splitCategoryItems[Math.floor(Math.random()*splitCategoryItems.length)].toUpperCase();
+  let displayWord = makeDisplayword(word);
+  const allLetters = document.querySelectorAll(".letter-box");
+    for (let i = 0; i < allLetters.length; i++) {
+      allLetters[i].addEventListener("click", handleClick);
+      allLetters[i].classList.remove('selected');
+    }
+  document.getElementById('play-again').addEventListener('click', gameSetup)
+  document.getElementById("showWord").hidden = true;
+  document.getElementById("winner").hidden = true;
+  document.getElementById('remainingGuesses').innerText = 6
+  document.getElementById('displayWord').innerText = displayWord
+  document.getElementById('word').innerText = word
+}
+gameSetup()
 
 // passes randomly generated emoji to the win and lose hidden messages.
 const winArr = ['&#128512;', '&#128513;', '&#128516;', '&#128526;']

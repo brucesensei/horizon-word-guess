@@ -1,16 +1,18 @@
 <%- include('../partials/header') %>
 
+  <p id="category-items" hidden><%= categoryItems %></p>
+
   <h2><%= displayCategory %></h2>
-  <h2 id="guess-text">Remaining Guesses: <span id="remainingGuesses">6</span></h2>
+  <h2 id="guess-text">Remaining Guesses: <span id="remainingGuesses"></span></h2>
+  <button id="play-again">PLAY AGAIN</button>
   <div id="letter-box"></div>
 
-  <p id="displayWord"><%= displayWord %></p>
+  <p id="displayWord"></p>
 
-  
+   
   <!-- utf-8 decimal codes for sunglass smiley and  cry. prepend &# to make them work. -->
-  <p id="showWord" hidden><span id="lose-emoji1"></span><span id="word"><%= word %></span><span id="lose-emoji2"></span></p>
-
-  <p id="winner" hidden><span id="win-emoji1"></span>YOU WIN!<span id="win-emoji2"></span></p>
+  <p id="showWord"><span id="lose-emoji1"></span><span id="word"></span><span id="lose-emoji2"></span></p>
+  <p id="winner"><span id="win-emoji1"></span>YOU WIN!<span id="win-emoji2"></span></p>
 
   <script src="js/clientSide.js"></script>
 </body>
