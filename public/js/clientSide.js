@@ -114,3 +114,4 @@ const loseArr = ['&#128566;', '&#128580;', '&#128558;', '&#128557;']
 const loseEmoji = loseArr[Math.floor(Math.random()*loseArr.length)];
 document.getElementById("lose-emoji1").innerHTML = loseEmoji
 document.getElementById("lose-emoji2").innerHTML = loseEmoji
+document.getElementById("guess-text").classList.remove("warning");
