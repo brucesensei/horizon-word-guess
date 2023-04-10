@@ -95,12 +95,13 @@ function gameSetup() {
       allLetters[i].addEventListener("click", handleClick);
       allLetters[i].classList.remove('selected');
     }
-  document.getElementById('play-again').addEventListener('click', gameSetup)
+  document.getElementById('play-again').addEventListener('click', gameSetup);
   document.getElementById("showWord").hidden = true;
   document.getElementById("winner").hidden = true;
-  document.getElementById('remainingGuesses').innerText = 6
-  document.getElementById('displayWord').innerText = displayWord
-  document.getElementById('word').innerText = word
+  document.getElementById('remainingGuesses').innerText = 6;
+  document.getElementById('displayWord').innerText = displayWord;
+  document.getElementById('word').innerText = word;
+  document.getElementById("guess-text").classList.remove("warning");
 }
 gameSetup()
 
@@ -114,4 +115,3 @@ const loseArr = ['&#128566;', '&#128580;', '&#128558;', '&#128557;']
 const loseEmoji = loseArr[Math.floor(Math.random()*loseArr.length)];
 document.getElementById("lose-emoji1").innerHTML = loseEmoji
 document.getElementById("lose-emoji2").innerHTML = loseEmoji
-document.getElementById("guess-text").classList.remove("warning");
