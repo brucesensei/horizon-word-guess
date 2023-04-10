@@ -27,12 +27,18 @@ app.get('/', function (req, res) {
   res.render('pages/index', { choices: choices })
 });
 
-app.post('/', function (req, res) { //LOOK HERE !!!!//--------------------
+app.post('/', function (req, res) {
   const category = req.body.categorylist;
   if (category == 'Random') {
     choicesCopy = [...choices];
     choicesCopy.splice(choicesCopy.indexOf('Random'), 1);
-    const randomChoice = choicesCopy[Math.floor(Math.random()*choicesCopy.length)];
+    let newList = []
+    for (let i = 0; i<choiceCopy.length;i++) {
+      if (!choiceCopy[i].startsWith('.')) {
+        newList.push(choiceCopy[i])
+      }
+    }
+    const randomChoice = newList[Math.floor(Math.random()*newList.length)];
     displayCategory = `Category:   ${randomChoice}`
     categoryItems = categories[randomChoice];
     res.redirect('/game')
