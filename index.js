@@ -33,9 +33,9 @@ app.post('/', function (req, res) {
     choicesCopy = [...choices];
     choicesCopy.splice(choicesCopy.indexOf('Random'), 1);
     let newList = []
-    for (let i = 0; i<choiceCopy.length;i++) {
-      if (!choiceCopy[i].startsWith('.')) {
-        newList.push(choiceCopy[i])
+    for (let i = 0; i<choicesCopy.length;i++) {
+      if (!choicesCopy[i].startsWith('.')) {
+        newList.push(choicesCopy[i])
       }
     }
     const randomChoice = newList[Math.floor(Math.random()*newList.length)];
