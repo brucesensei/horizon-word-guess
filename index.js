@@ -29,6 +29,8 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   const category = req.body.categorylist;
+  // remove random from the categories. remove all files that start with dot.
+  // randomly select a list from the elementary school lists and send data to the game.
   if (category == 'Random') {
     choicesCopy = [...choices];
     choicesCopy.splice(choicesCopy.indexOf('Random'), 1);
